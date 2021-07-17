@@ -9,12 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <title>Pokepedia</title>
-          <meta name="description" content="Pokemons by Tokopedia" />
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

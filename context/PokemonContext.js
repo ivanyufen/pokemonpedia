@@ -6,7 +6,6 @@ const PokemonProvider = ({ children }) => {
   let ownedPokemons = [];
   if (typeof window !== "undefined") {
     const ownedPokemonsLocals = localStorage.getItem('ownedPokemons');
-    console.log("ownedPokemonsLocals", ownedPokemonsLocals);
     if(ownedPokemonsLocals){
       ownedPokemons = JSON.parse(ownedPokemonsLocals);
     }

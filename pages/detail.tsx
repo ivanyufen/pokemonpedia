@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf, faMeteor } from "@fortawesome/free-solid-svg-icons";
 import { useState, useContext } from "react";
 import { PokemonContext } from 'context/PokemonContext';
+import Image from 'next/image'
 
 const API_URL = 'https://pokeapi.co/api/v2/';
 
@@ -90,7 +91,7 @@ const Detail = (props: any) => {
             {/*body*/}
             <div className="relative p-6 flex-auto">
               <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                { catched ? 'Give him a new nickname' : `${pokemonDetail.name} just run away!`}
+                { catched ? `Give him a new nickname` : `${pokemonDetail.name} just run away!`}
                 {catched && <input value={nickname} onChange={(e) => setNickname(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nickname" type="text" placeholder="Nickname" />}
               </p>
             </div>
@@ -157,7 +158,9 @@ const Detail = (props: any) => {
         <h1 className='text-xl'>Hi, my name is {capitalizeFirstLetter(pokemonDetail.name)}!</h1>
         <div className='cursor-pointer text-blue-500' onClick={handleCatch}>Click here to Catch</div>
       </div>
-      <img
+      <Image
+        width={100}
+        height={100}
         className='w-40 h-40 bg-green-600 rounded-full p-5 m-auto my-5'
         src={pokemonDetail.sprites.front_default}
         alt={pokemonDetail.sprites.front_default}
