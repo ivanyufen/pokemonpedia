@@ -7,7 +7,7 @@ export default function Header(){
   const router = useRouter();
 
   return (
-    <div className='flex justify-center items-center bg-green-600 p-2 sticky top-0'>
+    <div className='flex justify-center items-center bg-green-600 p-2 sticky top-0 z-20'>
       {router.pathname === '/detail' && 
         <FontAwesomeIcon onClick={() => router.back()} icon={faArrowLeft} color='white' className='absolute left-5 cursor-pointer' /> 
       }

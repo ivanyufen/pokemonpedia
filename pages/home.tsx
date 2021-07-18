@@ -59,9 +59,9 @@ const Home = (props: any) => {
             <div>Total: {pokemons.length}</div>
             <div>Total Pokemons Owned: {myPokemons.length}</div>
         </div>
-        <div className='flex flex-col w-full cursor-pointer'>
+        <div className='flex flex-col w-full'>
           {pokemons.map((item: any) => (
-            <div key={item.url} onClick={() => goToDetail(item.name)} style={{ boxShadow: 'rgb(34 34 34) 0.4rem 0.4rem 0px' }} className='p-5 rounded m-5 bg-green-600 text-white hover:bg-green-500'>
+            <div key={item.url} onClick={() => goToDetail(item.name)} style={{ boxShadow: 'rgb(34 34 34) 0.4rem 0.4rem 0px' }} className='p-5 rounded m-5 bg-green-600 text-white hover:bg-green-500 cursor-pointer'>
               {item.name}
             </div>
           ))}
@@ -71,12 +71,11 @@ const Home = (props: any) => {
   }
 
   const renderMyPokemons = () => {
-    const sadImageURL = 'https://media4.giphy.com/media/oVptBEikzk8pXQP0CG/giphy.gif?cid=6c09b952qfzo4a3zqjo74e6r6c6fjgy87fy17m1mwlmhcq2a&rid=giphy.gif&ct=s';
     if(!myPokemons || myPokemons.length === 0){
       return (
         <div className='h-screen flex flex-col justify-start items-center'>
-          <Image width={200} height={200} alt={sadImageURL} src={sadImageURL} className='w-auto h-20 m-auto' />
-          <div className='text-center'>Oops.. You havent catch any pokemons!</div>
+          <Image width={200} height={250} alt='https://assets.tokopedia.net/assets-tokopedia-lite/v2/arael/kratos/36c1015e.png' src='https://assets.tokopedia.net/assets-tokopedia-lite/v2/arael/kratos/36c1015e.png' className='w-40 h-auto m-auto' />
+          <div className='text-center'>Oops.. You haven&#39;t catch any pokemons!</div>
         </div>
       )
     }
